@@ -7,9 +7,9 @@ This site is hosted using Github Pages and Jekyll.
 
 <!-- more -->
 
-For an introduction to Github Pages see (https://pages.github.com).
+For an introduction to Github Pages see [https://pages.github.com](https://pages.github.com).
 
-For an introduction to Jekyll see (https://jekyllrb.com).
+For an introduction to Jekyll see [https://jekyllrb.com](https://jekyllrb.com).
 
 I used [Poole](http://getpoole.com) going very quickly.
 
