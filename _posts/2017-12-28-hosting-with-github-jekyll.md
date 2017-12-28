@@ -3,7 +3,9 @@ layout: post
 title: Hosting a blog using Github Pages and Jekyll
 ---
 
-This site is hosted using Github Pages and Jekyll.
+This site is hosted using Github Pages and Jekyll. 
+
+<!-- more -->
 
 For an introduction to Github Pages see (https://pages.github.com).
 
