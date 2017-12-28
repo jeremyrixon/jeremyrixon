@@ -18,9 +18,9 @@ title: rixon.org
         {{ post.content | split:'<!-- more -->' | first }}
     {% else %}
         <!-- Case for when no excerpt is defined -->
-    {% endif %}
         {{ post.content }}
-      </article>
+    {% endif %}
+  </article>
   {% endfor %}
 </div>
 
