@@ -14,8 +14,8 @@ title: rixon.org
 
     <time datetime="{{ post.date | date_to_xmlschema }}" class="post-date">{{ post.date | date_to_string }}</time>
 
-    {% if post.content contains '<!--more-->' %}
-        {{ post.content | split:'<!--more-->' | first }}
+    {% if post.content contains '<!-- more -->' %}
+        {{ post.content | split:'<!-- more -->' | first }}
     {% else %}
         <!-- Case for when no excerpt is defined -->
     {% endif %}
