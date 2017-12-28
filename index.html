@@ -16,7 +16,7 @@ title: rixon.org
 
     {% if post.content contains '<!-- more -->' %}
         {{ post.content | split:'<!-- more -->' | first }}
-        <a href="{{ site.baseurl }}{{ post.url }}">More..</a>
+        <a class="more-link" href="{{ site.baseurl }}{{ post.url }}">Read more..</a>
     {% else %}
         <!-- Case for when no excerpt is defined -->
         {{ post.content }}
