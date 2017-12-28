@@ -4,7 +4,7 @@ permalink:           pretty
 # Setup
 title:               rixon.org
 url:                 http://rixon.org
-paginate:            1
+paginate:            5
 baseurl:             ""
 
 # Assets
