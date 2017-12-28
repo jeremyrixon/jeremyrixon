@@ -3,7 +3,6 @@ permalink:           pretty
 
 # Setup
 title:               rixon.org
-tagline:             The Jekyll Butler
 url:                 http://rixon.org
 paginate:            1
 baseurl:             ""
