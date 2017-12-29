@@ -23,6 +23,6 @@ version:             1.0.0
 github:
 
 # Gems
-gems:
+plugins:
   - jekyll-paginate
   - jekyll-gist
