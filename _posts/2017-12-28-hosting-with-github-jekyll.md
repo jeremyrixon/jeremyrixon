@@ -13,6 +13,8 @@ For an introduction to Jekyll see [https://jekyllrb.com](https://jekyllrb.com).
 
 I used [Poole](http://getpoole.com) to get going very quickly.
 
+Something to note is that Github Pages has the following plugins enabled: [https://pages.github.com/versions/](https://pages.github.com/versions/). This page show what each plugin does: [https://jekyllrb.com/docs/plugins/#available-plugins](https://jekyllrb.com/docs/plugins/#available-plugins).
+
 So far, I'm using [Vim](http://www.vim.org) to edit templates and posts.
 
 ## Advantages
