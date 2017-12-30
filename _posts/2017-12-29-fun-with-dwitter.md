@@ -9,7 +9,7 @@ Create and post 140 character javascript demos with [Dwitter](https://www.dwitte
 
 Found via [Reddit /r/programming](https://www.reddit.com/r/programming/comments/8m8770/til_theres_a_community_called_dwitter_where/)
 
-Here's my contribution: https://www.dwitter.net/u/Jezza
+Here's my contribution: [https://www.dwitter.net/u/Jezza](https://www.dwitter.net/u/Jezza)
 
 <!--
 # Ideas
