@@ -3,7 +3,13 @@ layout: post
 title: Hosting a blog using Github Pages and Jekyll
 ---
 
-This site is hosted using Github Pages and Jekyll. 
+This site is hosted using Github Pages and Jekyll.
+
+Github provides a free way to host simple web pages called Github Pages. By simple, I mean static websites without a backend server. Note that you can still serve Javascript, so your site can be _dynamic_, it just can't store or process data on the server side.
+
+Jekyll provides a way to create static websites of exactly the type Github Pages serves.
+
+To make things super easy, Github Pages provides a way to use Jekyll in a very convenient way.
 
 <!-- more -->
 
