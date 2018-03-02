@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <style>
         * {padding:0;margin:0;border:0;outline:0;overflow:hidden}
-        html, body { width:100%; height:100%; }
+        html, body, canvas { width:100%; height:100%; }
         canvas { display:block; background: white }
 
     </style>
@@ -15,12 +15,16 @@
     var c = document.querySelector("#c");
     var x = c.getContext("2d");
     var w;
-    var h
+    var h;
     var frame;
 
+    function nearestPow2( aSize ){
+        return Math.pow( 2, Math.round( Math.log( aSize ) / Math.log( 2 ) ) );
+    }
+
     function init() {
-        w = c.width = window.innerWidth;
-        h = c.height = window.innerHeight;
+        w = c.width  = nearestPow2(window.innerWidth);
+        h = c.height = nearestPow2(window.innerHeight);
         frame = 0;
         window.scroll(0, 0);
     }
@@ -35,7 +39,7 @@
         x.fillStyle=R(frame%170,0,frame%130);
         x.fillRect(frame%w,h-1,1,1);
         x.drawImage(c,-1,-1);
-        x.drawImage(c,1,-1)
+        x.drawImage(c,1,-1);
     }
     function loop() {
         frame++;
