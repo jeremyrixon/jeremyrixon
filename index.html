@@ -181,10 +181,10 @@
     var pass;
 
     function init() {
-        w = c.width  = window.innerWidth;
-        h = c.height = window.innerHeight;
+        w = c.width  = window.innerWidth * 2;
+        h = c.height = window.innerHeight * 2;
         n = 0;
-        pass = 1;
+        pass = 10;
     }
 
     function R(r,g,b,a) {
@@ -193,19 +193,22 @@
     };
 
     function u() {
-        scale = 10;
+        scale = 15;
         
         if (n < h) {
             for(m = 0; m < w; m++) {
                 re = (m - w/2) / scale;
                 im = (n - h/2) / scale;
-                z = zeta3(Complex(re, im),pass * 1);
-                x.fillStyle = `hsl(${z.arg()*128/Math.PI}, 100%, 50%)`;
+                z = zeta1(Complex(re, im),pass * 1);
+                zeroness = Math.min(40/z.norm(), 255);
+                quadrant = (z.imag > 0) ^ (z.real > 0);
+                x.fillStyle = quadrant ? R(zeroness,0,0) : R(255,255-zeroness,255-zeroness);
+                //x.fillStyle = `hsl(${z.arg()*128/Math.PI}, 100%, 50%)`;
                 x.fillRect(m,h-n-1,1,1);
             }
             n++;
         } else {
-            pass++;
+            pass+=1;
             n=0;
         }
     }
@@ -220,3 +223,5 @@
 </script>
 
 </body>
+
+
