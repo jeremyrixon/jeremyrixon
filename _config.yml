@@ -1,5 +1,5 @@
 theme: jekyll-theme-dinky
 title: rixon.org
 description: 3
-github
+github:
   is_project_page: FALSE
