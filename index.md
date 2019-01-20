@@ -20,3 +20,6 @@ How to think about hexagons if you're a dev.
 ## [Wolfram Alpha](https://www.wolframalpha.com)
 Does maths so you don't have to.
 
+## [TIS-100](http://www.zachtronics.com/tis-100/)
+Really fun programming game from Zachtronics.
+
