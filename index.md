@@ -25,3 +25,9 @@ Really fun programming game from Zachtronics.
 
 ## [Haruki Murakami](http://www.harukimurakami.com)
 An author I enjoy reading.
+
+## [Pocket Tactics](https://www.pockettactics.com)
+Review site for mobile tactics and strategy games.
+
+## [Foundations](http://www.gregegan.net/FOUNDATIONS/)
+Intro to relativity and quantum mechanics.
