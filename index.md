@@ -23,3 +23,5 @@ Does maths so you don't have to.
 ## [TIS-100](http://www.zachtronics.com/tis-100/)
 Really fun programming game from Zachtronics.
 
+## [Haruki Murakami](http://www.harukimurakami.com)
+An author I enjoy reading.
