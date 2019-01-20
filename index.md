@@ -2,7 +2,7 @@
 layout: default
 ---
 
-### [Project Euler](https://projecteuler.org)
+### [Project Euler](https://projecteuler.net)
 An excellent source of interesting programming problems to solve.
 
 ### [Hacker News](https://news.ycombinator.com)
