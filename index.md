@@ -2,6 +2,9 @@
 layout: default
 ---
 
+### [Pathfinding.js](https://qiao.github.io/PathFinding.js/visual/)
+Cool visualisation of pathfinding algorithms. Watching this made me realise that I'd missed an optimisation opportunity in something I wrote years ago!
+
 ### [Project Euler](https://projecteuler.net)
 An excellent source of interesting programming problems to solve.
 
