@@ -35,4 +35,11 @@ Review site for mobile tactics and strategy games.
 ### [Foundations](http://www.gregegan.net/FOUNDATIONS/)
 Intro to relativity and quantum mechanics.
 
+<ul>
+  {% for post in site.posts %}
+    <li>
+      <a href="{{ post.url }}">{{ post.title }}</a>
+    </li>
+  {% endfor %}
+</ul>
 
