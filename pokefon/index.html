@@ -50,8 +50,8 @@
         this.onPress = onPress;
         this.onRelease = onRelease;
 
-        document.getElementById("A").addEventListener("mousedown", _ => onPress("A"));
-        document.getElementById("A").addEventListener("mouseup", _ => onRelease("A"));
+        document.getElementById("A").addEventListener("touchstart", _ => onPress("A"));
+        document.getElementById("A").addEventListener("touchend", _ => onRelease("A"));
 
         document.getElementById("B").addEventListener("mousedown", _ => onPress("B"));
         document.getElementById("B").addEventListener("mouseup", _ => onRelease("B"));
