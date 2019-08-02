@@ -34,5 +34,3 @@ Review site for mobile tactics and strategy games.
 
 ### [Foundations](http://www.gregegan.net/FOUNDATIONS/)
 Intro to relativity and quantum mechanics.
-
-
