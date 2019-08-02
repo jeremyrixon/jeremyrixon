@@ -2,75 +2,123 @@
 <html>
 <head>
     <meta charset="utf8"/>
-    <title>Gameboy emulator</title>
+    <title>Pokemon Red</title>
 </head>
 <body>
 
-<header>
-    <h1>Gameboy emulator</h1>
-</header>
-
 <div id="container">
-
     <div class="canvas-container"><canvas id="canvas"></canvas></div>
-
-    <p class="commands">
-        <label>
-            Screen zoom
-            <select id="screen-zoom" onchange="g.setScreenZoom(this.value);">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-            </select>
-        </label>
-    </p>
-
-    <p>
-        <span id="status"></span> <span id="game-name"></span>
-    </p>
-    <p id="error" class="hide"></p>
-
-    <div class="rom-section">
-        <div id="rom-file">
-            <label>Choose a ROM file on your computer: <input type="file" id="file"/></label>
-        </div>
-
-        <div id="rom-drop">
-            <div id="dropzone">
-                <p>
-                    Or drop a ROM file here
-                </p>
-            </div>
-        </div>
-    </div>
-
-    <div id="keyboard-info">
-        <p>Current keyboard mapping:</p>
-        <table>
-            <thead>
-            <tr><th>Gameboy pad</th><th>Keyboard mapping</th></tr>
-            </thead>
-            <tbody>
-            <tr><td>A</td><td>G</td></tr>
-            <tr><td>B</td><td>B</td></tr>
-            <tr><td>START</td><td>H</td></tr>
-            <tr><td>SELECT</td><td>N</td></tr>
-            <tr><td>Directional pad</td><td>Arrow keys</td></tr>
-            </tbody>
-        </table>
-    </div>
-
-
 </div>
+
+<button id="A">A</button>
+<button id="B">B</button>
+<button id="SELECT">SELECT</button>
+<button id="START">START</button>
+<button id="LEFT">LEFT</button>
+<button id="RIGHT">RIGHT</button>
+<button id="UP">UP</button>
+<button id="DOWN">DOWN</button>
 
 <script type="text/javascript" src="gameboy.js"></script>
 
 <script type="text/javascript">
+
     var romAjaxReader = new GameboyJS.RomAjaxReader();
+
+    // Keyboard listener
+    // Does the mapping between the keyboard and the Input class
+    var Keyboard = function() {};
+
+    // Initialize the keyboard listeners and set up the callbacks
+    // for button press / release
+    Keyboard.prototype.init = function(onPress, onRelease) {
+        this.onPress = onPress;
+        this.onRelease = onRelease;
+
+        document.getElementById("A").addEventListener("mousedown", _ => onPress("A"));
+        document.getElementById("A").addEventListener("mouseup", _ => onRelease("A"));
+
+        document.getElementById("B").addEventListener("mousedown", _ => onPress("B"));
+        document.getElementById("B").addEventListener("mouseup", _ => onRelease("B"));
+
+        document.getElementById("SELECT").addEventListener("mousedown", _ => onPress("SELECT"));
+        document.getElementById("SELECT").addEventListener("mouseup", _ => onRelease("SELECT"));
+
+        document.getElementById("START").addEventListener("mousedown", _ => onPress("START"));
+        document.getElementById("START").addEventListener("mouseup", _ => onRelease("START"));
+
+        document.getElementById("LEFT").addEventListener("mousedown", _ => onPress("LEFT"));
+        document.getElementById("LEFT").addEventListener("mouseup", _ => onRelease("LEFT"));
+
+        document.getElementById("RIGHT").addEventListener("mousedown", _ => onPress("RIGHT"));
+        document.getElementById("RIGHT").addEventListener("mouseup", _ => onRelease("RIGHT"));
+
+        document.getElementById("UP").addEventListener("mousedown", _ => onPress("UP"));
+        document.getElementById("UP").addEventListener("mouseup", _ => onRelease("UP"));
+
+        document.getElementById("DOWN").addEventListener("mousedown", _ => onPress("DOWN"));
+        document.getElementById("DOWN").addEventListener("mouseup", _ => onRelease("DOWN"));
+
+        var self = this;
+        document.addEventListener('keydown', function(e) {
+            self.managePress(e.keyCode);
+        });
+        document.addEventListener('keyup', function(e) {
+            self.manageRelease(e.keyCode);
+        });
+    }
+
+    Keyboard.prototype.managePress = function(keycode) {
+        var key = this.translateKey(keycode);
+        if (key) {
+            this.onPress(key);
+        }
+    };
+
+    Keyboard.prototype.manageRelease = function(keycode) {
+        var key = this.translateKey(keycode);
+        if (key) {
+            this.onRelease(key);
+        }
+    };
+
+    // Transform a keyboard keycode into a key of the Input.keys object
+    Keyboard.prototype.translateKey = function(keycode) {
+        var key = null;
+        switch (keycode) {
+            case 71: // G
+                key = 'A';
+                break;
+            case 66: // B
+                key = 'B';
+                break;
+            case 72: // H
+                key = 'START';
+                break;
+            case 78: // N
+                key = 'SELECT';
+                break;
+            case 37: // left
+                key = 'LEFT';
+                break;
+            case 38: // up
+                key = 'UP';
+                break;
+            case 39: // right
+                key = 'RIGHT';
+                break;
+            case 40: // down
+                key = 'DOWN';
+                break;
+        }
+
+        return key;
+    };
 
     // configuration
     var opts = {
-        romReaders: [ romAjaxReader ]
+        romReaders: [ romAjaxReader ],
+        pad: {class: Keyboard, mapping: null},
     };
 
     var g = new GameboyJS.Gameboy(document.getElementById('canvas'), opts);
